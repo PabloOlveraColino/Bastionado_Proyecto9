@@ -5,7 +5,7 @@ En esta parte, analizamos el certificado válido de Let's Encrypt de antes y exp
 
 Haciendo uso de la página web de [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=polvcol.zapto.org), obtenemos una calificación de A en nuestro dominio.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-21.png]]
+![Imagen](images/image-21.png)
 
 Es confiable debido a los siguientes motivos:
 
@@ -46,15 +46,15 @@ Vamos a analizar los siguientes tres sitios web con certificados errores con las
 
 El dominio de`https://expired.badssl.com/` ya no es seguro debido a que ha superado su fecha de expiración. Los certificados una vez vencidos, los navegadores y herramientas de seguridad los marcan como inseguros.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-22.png]]
+![Imagen](images/image-22.png)
 
 Además también está rota la cadena de confianza al no ser confiable por ningún navegador.
 
 Tiene una calificación de F según ImmuniWeb.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-23.png]]
+![Imagen](images/image-23.png)
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-24.png]]
+![Imagen](images/image-24.png)
 
 Código de error: [SEC_ERROR_EXPIRED_CERTIFICATE](about:certerror?e=nssBadCert&u=https%3A//expired.badssl.com/&c=UTF-8&d=%20#certificateErrorDebugInformation)
 
@@ -62,11 +62,11 @@ Código de error: [SEC_ERROR_EXPIRED_CERTIFICATE](about:certerror?e=nssBadCert&u
 
 Debido a irregularidades en el dominio`playdede.to`, los navegadores han perdido la confianza en estos certificados y nos impiden entrar en la página web.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-25.png]]
+![Imagen](images/image-25.png)
 
 Obtiene la peor calificación en HTTP Observatory.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-26.png]]
+![Imagen](images/image-26.png)
 
 Código de error: [SEC_ERROR_UNKNOWN_ISSUER](about:certerror?e=nssBadCert&u=https%3A//playdede.to/&c=UTF-8&d=%20#certificateErrorDebugInformation)
 
@@ -74,13 +74,13 @@ Código de error: [SEC_ERROR_UNKNOWN_ISSUER](about:certerror?e=nssBadCert&u=http
 
 El sitio web de`wrong.host.badssl.com`tiene un certificado emitido por`*.badssl.com`pero el sitio accedido es distinto.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-27.png]]
+![Imagen](images/image-27.png)
 
 Código de error: [SSL_ERROR_BAD_CERT_DOMAIN](about:certerror?e=nssBadCert&u=https%3A//wrong.host.badssl.com/&c=UTF-8&d=%20#certificateErrorDebugInformation)
 
 En SecurityHeaders obtenemos una calificación de R en el dominio.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-28.png]]
+![Imagen](images/image-28.png)
 
 # Conclusión
 
