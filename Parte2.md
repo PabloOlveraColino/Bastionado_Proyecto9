@@ -17,27 +17,31 @@ Haciendo uso de no-ip, generamos un dominio gratuito.
 http://polvcol.zapto.org
 ```
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image.png]]
+![Imagen](images/image.png)
 
 Accedemos mediante el nombre de dominio aunque aún no tenemos certificado, el cuál vamos a poner en marcha en los siguientes pasos.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-1.png]]
+
+![Imagen](images/image-1.png)
 
 Añadimos también el dominio a nuestra cuenta de DigitalOcean.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-2.png]]
+
+![Imagen](images/image-2.png)
 
 Escribimos nuestro dominio y le damos a "Add Domain".
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-3.png]]
+
+![Imagen](images/image-3.png)
+
 
 Creamos el registro de tipo A apuntando a la IP pública del servidor web.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-4.png]]
+![Imagen](images/image-4.png)
 
 Y otro registro www apuntando a la IP pública también.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-5.png]]
+![Imagen](images/image-5.png)
 
 # Instalación de Certbot
 
@@ -46,8 +50,7 @@ Para obtener un certificado SSL con Let's Engryct, necesamos instalar CertBot en
 ```
 sudo apt install certbot python3-certbot-apache
 ```
-
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-6.png]]
+![Imagen](images/image-6.png)
 
 # Configuración del VirtualHost de Apache
 
@@ -56,16 +59,14 @@ Creamos un fichero de configuración de Apache de nuestro dominio.
 ```
 sudo nano /etc/apache2/sites-available/polvcol.zapto.org.conf
 ```
-
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-7.png]]
+![Imagen](images/image-7.png)
 
 Comprobamos si hay algún error.
 
 ```
 sudo apache2ctl configtest
 ```
-
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-8.png]]
+![Imagen](images/image-8.png)
 
 Si no hay ningún problema, recargamos apache.
 
@@ -83,41 +84,41 @@ sudo certbot --apache
 
 Introducimos un correo.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-9.png]]
+![Imagen](images/image-9.png)
 
 Aceptamos los términos y servicios escribiendo "Y".
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-10.png]]
+![Imagen](images/image-10.png)
 
 Decimos que no en este paso.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-11.png]]
+![Imagen](images/image-11.png)
 
 Introducimos el nombre de dominio que creamos para generar finalmente el certificado seguro con Let's Encrypt.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-12.png]]
+![Imagen](images/image-12.png)
 
 Accedemos a la web con HTTPS.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-13.png]]
+![Imagen](images/image-13.png)
 
 Esta es la información del certificado.
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-14.png]]
+![Imagen](images/image-14.png)
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-15.png]]
+![Imagen](images/image-15.png)
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-16.png]]
+![Imagen](images/image-16.png)
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-17.png]]
+![Imagen](images/image-17.png)
 
 # Análisis y comparación con un sitio web verificado
 
 Vamos a usar como otro ejemplo de sitio web verificado GitHub, el cual lo mostramos en las siguientes capturas:
 
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-18.png]]
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-19.png]]
-![[Bastionado_de_Sistemas/UD4/Proyecto9/images/image-20.png]]
+![Imagen](images/image-18.png)
+![Imagen](images/image-19.png)
+![Imagen](images/image-20.png)
 
 Lo primero que podemos destacar es que el emisor del certificado es obviamente distinto al de Let's Encrypt, la organización es Sectigo Limited, que es una autoridad certificadora comercial importante.
 
